@@ -15,10 +15,11 @@
       display: flex;
       justify-content: center;
       padding: 1rem 0.3rem;
+      margin-top: 80px; /* Adjust to match your navbar height */
     }
     .sticky-card {
       position: sticky;
-      top: 20px;
+      top: 80px; /* Adjust to match your navbar height */
       max-width: 380px;
       width: 100%;
       background-color: #f4dec0;
