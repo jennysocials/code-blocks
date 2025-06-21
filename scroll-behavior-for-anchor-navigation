@@ -1,0 +1,3 @@
+/* ====== SCROLL BEHAVIOR ====== */
+html { scroll-behavior: smooth; }
+h2, h3, .anchor-target { scroll-margin-top: 160px; }
