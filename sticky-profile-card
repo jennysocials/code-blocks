@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Attorney Profile Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .card-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 3rem 1rem;
+    }
+
+    .sticky-card {
+      position: sticky;
+      top: 20px;
+      max-width: 400px;
+      width: 100%;
+      background-color: #f4dec0;
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .sticky-card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+    }
+
+    .sticky-card h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin: 0;
+      border-bottom: 2px solid #000;
+      display: inline-block;
+      padding-bottom: 0.4rem;
+    }
+
+    .sticky-card h2 {
+      margin: 0.8rem 0 1.5rem;
+      font-weight: 500;
+      color: #444;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .contact-info {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      color: #0b4c2e;
+    }
+
+    .contact-info p {
+      margin: 0.6rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .contact-info span {
+      font-size: 1.2rem;
+    }
+
+    .contact-info a {
+      font-weight: bold;
+      color: #0b4c2e;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #06331d;
+    }
+
+    .button {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      padding: 0.9rem 2.5rem;
+      border-radius: 40px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+    }
+
+    .button:hover {
+      background-color: #222;
+      transform: translateY(-2px);
+    }
+
+    .section {
+      text-align: left;
+      padding: 0 0.5rem;
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .section ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .section li {
+      margin-bottom: 0.4rem;
+    }
+
+    .section a {
+      color: #0b4c2e;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .section a:hover {
+      color: #06331d;
+    }
+
+    /* 🔻 Responsive Styles */
+    @media (max-width: 600px) {
+      .card-wrapper {
+        padding: 1.5rem 1rem;
+      }
+
+      .sticky-card {
+        padding: 2rem 1rem;
+      }
+
+      .sticky-card img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+      }
+
+      .sticky-card h1 {
+        font-size: 1.5rem;
+      }
+
+      .sticky-card h2 {
+        font-size: 0.95rem;
+      }
+
+      .contact-info {
+        font-size: 0.95rem;
+      }
+
+      .button {
+        font-size: 0.95rem;
+        padding: 0.75rem 2rem;
+      }
+
+      .section {
+        font-size: 0.95rem;
+      }
+
+      .section h3 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-wrapper">
+    <div class="sticky-card">
+      <img src="https://images.squarespace-cdn.com/content/v1/683db14b158de878953aef5c/74293d3f-dbb4-4db4-8278-c17bed7f1a4b/thomas-west.png?format=2500w" alt="Thomas West" />
+      <h1>THOMAS WEST</h1>
+      <h2>FOUNDING PARTNER</h2>
+
+      <div class="contact-info">
+        <p><span>📞</span><a href="tel:5186410500">518-641-0500</a></p>
+        <p><span>📧</span><a href="mailto:thomas.west@westfirmlaw.com">thomas.west@westfirmlaw.com</a></p>
+      </div>
+
+      <a href="tel:5186410500" class="button">Make an Appointment</a>
+
+      <div class="section education">
+        <h3>Education</h3>
+        <ul>
+          <li>St. Lawrence University</li>
+          <li>Albany Law School (1974–1977)</li>
+        </ul>
+      </div>
+
+      <div class="section practice-areas" style="margin-top: 1.8rem;">
+        <h3>Practice Areas</h3>
+        <ul>
+          <li><a href="#">Environmental</a></li>
+          <li><a href="#">Commercial Litigation</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
