@@ -5,217 +5,238 @@
   <title>Attorney Profile Card</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f0f0f0;
     }
-
     .card-wrapper {
       display: flex;
       justify-content: center;
-      padding: 3rem 1rem;
+      padding: 1rem 0.3rem;
     }
-
     .sticky-card {
       position: sticky;
       top: 20px;
-      max-width: 400px;
+      max-width: 380px;
       width: 100%;
       background-color: #f4dec0;
-      border-radius: 24px;
-      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      padding: 1.1rem 1rem 1.1rem 1rem;
       text-align: center;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
     }
-
-    .sticky-card img {
-      width: 150px;
-      height: 150px;
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1.1rem;
+      margin-top: 0.1rem;
+    }
+    .profile-header img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.7rem;
     }
-
-    .sticky-card h1 {
-      font-size: 1.8rem;
+    .profile-header .name {
       font-weight: 800;
-      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-size: 1.7rem;
+      background: linear-gradient(90deg, #005932, #00994d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.2px;
       margin: 0;
       border-bottom: 2px solid #000;
       display: inline-block;
-      padding-bottom: 0.4rem;
+      padding-bottom: 0.22rem;
     }
-
-    .sticky-card h2 {
-      margin: 0.8rem 0 1.5rem;
-      font-weight: 500;
+    .profile-header .title {
+      margin: 0.5rem 0 0 0;
+      font-weight: 800;
       color: #444;
-      font-size: 1rem;
+      font-size: 0.93rem;
       letter-spacing: 1px;
+      display: block;
     }
-
+    /* Contact Links */
     .contact-info {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      color: #0b4c2e;
-    }
-
-    .contact-info p {
-      margin: 0.6rem 0;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      font-size: 1.0rem;
+      margin-bottom: 0.7rem;
+      color: #0b4c2e;
+      gap: 0.18rem;
+      padding-left: 0;
+      text-align: center;
     }
-
-    .contact-info span {
-      font-size: 1.2rem;
-    }
-
-    .contact-info a {
+    .contact-link {
+      display: inline-block;
       font-weight: bold;
       color: #0b4c2e;
       text-decoration: none;
-      transition: color 0.3s ease;
+      position: relative;
+      transition: color 0.3s, transform 0.18s;
+      will-change: transform;
+      margin-bottom: 0.09rem;
+      padding: 0.1em 0;
+      cursor: pointer;
+      font-size: 1em;
+      border-radius: 5px;
+      text-align: center;
     }
-
-    .contact-info a:hover {
-      color: #06331d;
+    .contact-link:hover, .contact-link:focus {
+      color: #00994d;
+      animation: expand-contact 0.22s cubic-bezier(.36,.07,.19,.97) both;
     }
-
+    @keyframes expand-contact {
+      0% { transform: scale(1); }
+      65% { transform: scale(1.18); }
+      100% { transform: scale(1.12); }
+    }
+    .action-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1.05rem;
+      margin-top: 0.15rem;
+    }
     .button {
-      display: inline-block;
       background: #000;
       color: #fff;
-      padding: 0.9rem 2.5rem;
+      padding: 0.62rem 1.3rem;
       border-radius: 40px;
       font-size: 1rem;
       text-decoration: none;
       transition: all 0.3s ease;
-      margin-bottom: 2rem;
+      border: none;
+      display: inline-block;
     }
-
-    .button:hover {
+    .button:hover, .button:focus {
       background-color: #222;
-      transform: translateY(-2px);
+      transform: translateY(-1px) scale(1.03);
     }
-
-    .section {
+    .linkedin-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #0a66c2;
+      background: #fff;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      border: 1.5px solid #e6e6e6;
+      box-shadow: 0 1px 6px rgba(10,102,194,0.09);
+      transition: background 0.2s, box-shadow 0.2s;
+      font-size: 1.18rem;
+      text-decoration: none;
+      margin: 0 0.2rem;
+    }
+    .linkedin-link:hover, .linkedin-link:focus {
+      background: #eaf3fb;
+      box-shadow: 0 4px 16px rgba(10,102,194,0.16);
+      color: #004182;
+    }
+    /* Info Section Card */
+    .info-list-section {
+      background: #fff8ee;
+      border-radius: 12px;
+      box-shadow: 0 2px 9px rgba(0,48,26,0.09);
+      border-left: 3px solid #0b4c2e;
+      margin-bottom: 1.1rem;
+      padding: 0.7rem 0.7rem 0.7rem 1.1rem;
       text-align: left;
-      padding: 0 0.5rem;
-      color: #333;
+      position: relative;
+      min-width: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .info-list-section:last-child { margin-bottom: 0; }
+    .info-list-section h3 {
       font-size: 1rem;
+      margin: 0 0 0.65rem 0;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #222;
+      display: block;
+      text-align: left;
+      text-decoration: none;
     }
-
-    .section h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-      text-decoration: underline;
-    }
-
-    .section ul {
-      list-style-type: none;
+    .info-list {
+      list-style: none;
       padding: 0;
       margin: 0;
+      width: 100%;
     }
-
-    .section li {
-      margin-bottom: 0.4rem;
+    .info-list li {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      color: #2b2b2b;
+      font-size: 0.97rem;
+      margin-bottom: 0.35rem;
+      padding-left: 0;
     }
-
-    .section a {
-      color: #0b4c2e;
-      font-weight: 600;
-      text-decoration: none;
-      transition: color 0.3s ease;
+    .info-list li:last-child { margin-bottom: 0; }
+    .info-icon {
+      display: inline-flex;
+      font-size: 1.18em;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.5em;
+      color: #00642f;
+      flex-shrink: 0;
+      min-width: 1.2em;
+      text-align: center;
     }
-
-    .section a:hover {
-      color: #06331d;
-    }
-
-    /* 🔻 Responsive Styles */
     @media (max-width: 600px) {
       .card-wrapper {
-        padding: 1.5rem 1rem;
-      }
-
-      .sticky-card {
-        padding: 2rem 1rem;
-      }
-
-      .sticky-card img {
-        width: 120px;
-        height: 120px;
-        margin-bottom: 1rem;
-      }
-
-      .sticky-card h1 {
-        font-size: 1.5rem;
-      }
-
-      .sticky-card h2 {
-        font-size: 0.95rem;
-      }
-
-      .contact-info {
-        font-size: 0.95rem;
-      }
-
-      .button {
-        font-size: 0.95rem;
-        padding: 0.75rem 2rem;
-      }
-
-      .section {
-        font-size: 0.95rem;
-      }
-
-      .section h3 {
-        font-size: 1.1rem;
+        display: none !important;
       }
     }
   </style>
 </head>
 <body>
-
   <div class="card-wrapper">
     <div class="sticky-card">
-      <img src="https://images.squarespace-cdn.com/content/v1/683db14b158de878953aef5c/74293d3f-dbb4-4db4-8278-c17bed7f1a4b/thomas-west.png?format=2500w" alt="Thomas West" />
-      <h1>THOMAS WEST</h1>
-      <h2>FOUNDING PARTNER</h2>
-
-      <div class="contact-info">
-        <p><span>📞</span><a href="tel:5186410500">518-641-0500</a></p>
-        <p><span>📧</span><a href="mailto:thomas.west@westfirmlaw.com">thomas.west@westfirmlaw.com</a></p>
+      <div class="profile-header">
+        <img src="https://images.squarespace-cdn.com/content/v1/683db14b158de878953aef5c/74293d3f-dbb4-4db4-8278-c17bed7f1a4b/thomas-west.png?format=2500w" alt="Thomas West" />
+        <span class="name">THOMAS WEST</span>
+        <span class="title">FOUNDING PARTNER</span>
       </div>
-
-      <a href="tel:5186410500" class="button">Make an Appointment</a>
-
-      <div class="section education">
+      <div class="contact-info">
+        <a href="tel:5186410500" class="contact-link">518-641-0500</a>
+        <a href="mailto:thomas.west@westfirmlaw.com" class="contact-link">thomas.west@westfirmlaw.com</a>
+      </div>
+      <div class="action-row">
+        <a href="tel:5186410500" class="button">Make an Appointment</a>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/thomaswest" target="_blank" rel="noopener" title="LinkedIn profile" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.795-1.75-1.732s.784-1.732 1.75-1.732 1.75.795 1.75 1.732-.784 1.732-1.75 1.732zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.969v5.698h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.035 0 3.595 1.997 3.595 4.592v5.604z"/></svg>
+        </a>
+      </div>
+      <div class="info-list-section">
         <h3>Education</h3>
-        <ul>
-          <li>St. Lawrence University</li>
-          <li>Albany Law School (1974–1977)</li>
+        <ul class="info-list">
+          <li><span class="info-icon">🎓</span>St. Lawrence University</li>
+          <li><span class="info-icon">🎓</span>Albany Law School (1974–1977)</li>
         </ul>
       </div>
-
-      <div class="section practice-areas" style="margin-top: 1.8rem;">
+      <div class="info-list-section">
         <h3>Practice Areas</h3>
-        <ul>
-          <li><a href="#">Environmental</a></li>
-          <li><a href="#">Commercial Litigation</a></li>
+        <ul class="info-list">
+          <li><span class="info-icon">⚖️</span>Environmental</li>
+          <li><span class="info-icon">⚖️</span>Commercial Litigation</li>
         </ul>
       </div>
     </div>
   </div>
-
 </body>
 </html>
-
