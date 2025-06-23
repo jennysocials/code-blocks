@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Aktiv+Grotesk&family=Bodoni+Moda:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Aktiv Grotesk', sans-serif;
+      background: #f5f5f5;
+      color: #001A0E;
+    }
+
+    .team-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+
+    .team-section {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .team-list {
+      flex: 1;
+      min-width: 250px;
+      max-width: 300px;
+      border-right: 2px solid #DDBF91;
+      padding-right: 20px;
+    }
+
+    .team-member {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-member:hover {
+      background-color: #f0e3cf;
+    }
+
+    .team-member.active {
+      background-color: #DDBF91;
+      box-shadow: 0 2px 6px rgba(0, 89, 50, 0.3);
+      border: 2px solid #caa66e;
+    }
+
+    .team-member img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .team-member h4 {
+      margin: 0;
+      font-family: 'Bodoni Moda', serif;
+      font-size: 1.15rem;
+      color: #005932;
+    }
+
+    .team-member span {
+      font-size: 1rem;
+      color: #001A0E;
+    }
+
+    .team-details {
+      flex: 2;
+      padding: 0 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .team-details img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .team-details h2 {
+      font-family: 'Bodoni Moda', serif;
+      color: #005932;
+      margin: 0;
+    }
+
+    .team-details .title {
+      color: #001A0E;
+      margin: 5px 0;
+    }
+
+    .team-details .tagline {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #555;
+      font-style: italic;
+    }
+
+    .team-details a {
+      color: #005932;
+      text-decoration: none;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .learn-more {
+      margin-top: 20px;
+      background: #005932;
+      color: #FFFFFF;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .learn-more:hover {
+      background: #001A0E;
+    }
+
+    .vcard-link {
+      display: inline-block;
+      margin-top: 15px;
+      color: #001A0E;
+      font-weight: bold;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .vcard-link:hover {
+      color: #005932;
+    }
+
+    @media (max-width: 768px) {
+      .team-section {
+        flex-direction: column;
+      }
+
+      .team-list {
+        max-width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #DDBF91;
+        padding-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .team-details {
+        padding: 20px 0 0;
+        align-items: center;
+        text-align: center;
+      }
+
+      .team-details img {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="team-wrapper">
+    <div class="team-section">
+      <div class="team-list">
+        <div class="team-member active" onclick="showMember(0)">
+          <img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/03844732-2f13-4135-9b99-5830e15feddf/placehodler+for+attorney+profile.jpeg?content-type=image%2Fjpeg" alt="Thomas West"/>
+          <div>
+            <h4>Thomas West</h4>
+            <span>Managing Partner</span>
+          </div>
+        </div>
+        <div class="team-member" onclick="showMember(1)">
+          <img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/03844732-2f13-4135-9b99-5830e15feddf/placehodler+for+attorney+profile.jpeg?content-type=image%2Fjpeg" alt="Mark Wagner"/>
+          <div>
+            <h4>Mark J. Wagner Jr.</h4>
+            <span>Partner</span>
+          </div>
+        </div>
+        <div class="team-member" onclick="showMember(2)">
+          <img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/03844732-2f13-4135-9b99-5830e15feddf/placehodler+for+attorney+profile.jpeg?content-type=image%2Fjpeg" alt="Michael Peters"/>
+          <div>
+            <h4>Michael Peters</h4>
+            <span>Partner</span>
+          </div>
+        </div>
+        <div class="team-member" onclick="showMember(3)">
+          <img src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/03844732-2f13-4135-9b99-5830e15feddf/placehodler+for+attorney+profile.jpeg?content-type=image%2Fjpeg" alt="Louis Bianchi"/>
+          <div>
+            <h4>Louis D. Bianchi</h4>
+            <span>Partner</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-details" id="team-details">
+        <img id="profile-image" src="https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/03844732-2f13-4135-9b99-5830e15feddf/placehodler+for+attorney+profile.jpeg?content-type=image%2Fjpeg" alt="Profile"/>
+        <h2 id="profile-name">Thomas West</h2>
+        <div class="title" id="profile-title">Managing Partner</div>
+        <div class="tagline" id="profile-tagline">Focuses on commercial leasing and development projects</div>
+        <div><strong>Phone:</strong> <span id="profile-phone">(518) 555-1234</span></div>
+        <div><strong>Email:</strong> <a id="profile-email" href="mailto:twest@westfirmlaw.com">twest@westfirmlaw.com</a></div>
+        <button class="learn-more">Learn More</button>
+        <a class="vcard-link" id="vcard-link" href="#" download>Download Contact vCard →</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const teamData = [
+      {
+        name: 'Thomas West',
+        title: 'Managing Partner',
+        tagline: 'Focuses on commercial leasing and development projects',
+        phone: '(518) 555-1234',
+        email: 'twest@westfirmlaw.com',
+        image: 'https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/03844732-2f13-4135-9b99-5830e15feddf/placehodler+for+attorney+profile.jpeg?content-type=image%2Fjpeg',
+        vcard: 'twest.vcf'
+      },
+      {
+        name: 'Mark J. Wagner Jr.',
+        title: 'Partner',
+        tagline: 'Leads transactional due diligence and permitting matters',
+        phone: '(518) 555-5678',
+        email: 'mwagner@westfirmlaw.com',
+        image: 'https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/03844732-2f13-4135-9b99-5830e15feddf/placehodler+for+attorney+profile.jpeg?content-type=image%2Fjpeg',
+        vcard: 'mwagner.vcf'
+      },
+      {
+        name: 'Michael Peters',
+        title: 'Partner',
+        tagline: 'Advises on brownfield redevelopment and zoning approvals',
+        phone: '(518) 555-9012',
+        email: 'mpeters@westfirmlaw.com',
+        image: 'https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/03844732-2f13-4135-9b99-5830e15feddf/placehodler+for+attorney+profile.jpeg?content-type=image%2Fjpeg',
+        vcard: 'mpeters.vcf'
+      },
+      {
+        name: 'Louis D. Bianchi',
+        title: 'Partner',
+        tagline: 'Specializes in industrial permitting and SEQR strategy',
+        phone: '(518) 555-3456',
+        email: 'lbianchi@westfirmlaw.com',
+        image: 'https://images.squarespace-cdn.com/content/683db14b158de878953aef5c/03844732-2f13-4135-9b99-5830e15feddf/placehodler+for+attorney+profile.jpeg?content-type=image%2Fjpeg',
+        vcard: 'lbianchi.vcf'
+      }
+    ];
+
+    function showMember(index) {
+      const data = teamData[index];
+      document.getElementById('profile-name').textContent = data.name;
+      document.getElementById('profile-title').textContent = data.title;
+      document.getElementById('profile-tagline').textContent = data.tagline;
+      document.getElementById('profile-phone').textContent = data.phone;
+      document.getElementById('profile-email').textContent = data.email;
+      document.getElementById('profile-email').href = `mailto:${data.email}`;
+      document.getElementById('profile-image').src = data.image;
+      document.getElementById('vcard-link').href = data.vcard;
+
+      document.querySelectorAll('.team-member').forEach((el, i) => {
+        el.classList.toggle('active', i === index);
+      });
+    }
+  </script>
+</body>
+</html>
